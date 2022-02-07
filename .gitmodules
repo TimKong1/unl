@@ -1,0 +1,3 @@
+[submodule "tripartite_src/compile-time-regular-expressions"]
+	path = tripartite_src/compile-time-regular-expressions
+	url = https://github.com/hanickadot/compile-time-regular-expressions.git

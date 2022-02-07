@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 project(unl)
-#添加
-add_subdirectory(tripartite_src/libevent-2.1.12-stable)
-set(CMAKE_CXX_STANDARD 11)
+#添加第三方库
+add_subdirectory(tripartite_src/libevent)
+add_subdirectory(tripartite_src/fmt)
+add_subdirectory(tripartite_src/compile-time-regular-expressions)
+#C++20
+set(CMAKE_CXX_STANDARD 20)
 ############################################################
 # Create a library
 ############################################################
@@ -27,7 +30,7 @@ target_include_directories(unl
         ${PROJECT_SOURCE_DIR}/include/core
 )
 #链接libevent和pthread
-target_link_libraries(unl event pthread)
+target_link_libraries(unl event pthread fmt ctre)
 #编译 example里的http_server
 add_subdirectory(example/http)
 #编译 example里的ftp_server
