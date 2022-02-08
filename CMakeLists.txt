@@ -4,8 +4,8 @@ project(unl)
 add_subdirectory(tripartite_src/libevent)
 add_subdirectory(tripartite_src/fmt)
 add_subdirectory(tripartite_src/compile-time-regular-expressions)
-#C++20
-set(CMAKE_CXX_STANDARD 20)
+#C++17
+set(CMAKE_CXX_STANDARD 17)
 ############################################################
 # Create a library
 ############################################################

@@ -3,6 +3,6 @@ fmt
 mkdir build
 cd build
 MacOS:
-cmake  -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DCMAKE_BUILD_TYPE=Release ..
+cmake  -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 ..
 Others:
-cmake  -DCMAKE_BUILD_TYPE=Release ..
+cmake  -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 ..

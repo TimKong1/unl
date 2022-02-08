@@ -1,3 +1,11 @@
 [submodule "tripartite_src/compile-time-regular-expressions"]
 	path = tripartite_src/compile-time-regular-expressions
 	url = https://github.com/hanickadot/compile-time-regular-expressions.git
+
+[submodule "tripartite_src/fmt"]
+	path = tripartite_src/fmt
+	url = https://github.com/fmtlib/fmt.git
+
+[submodule "tripartite_src/libevent"]
+	path = tripartite_src/libevent
+	url = https://github.com/libevent/libevent.git
