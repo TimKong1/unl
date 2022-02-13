@@ -16,10 +16,12 @@ add_library(unl SHARED
     src/core/uListener.cpp
     src/http/uHttpIO.cpp
     src/http/uHttpServer.cpp
+    src/http/uHttpRequest.cpp
     src/thread/uTask.cpp
     src/thread/uThread.cpp
     src/thread/uThreadPool.cpp
     src/util/utstr.cpp
+    src/util/urihandle.cpp
 )
 #给动态库unl起一个别的名字unl::library
 add_library(unl::library ALIAS unl)

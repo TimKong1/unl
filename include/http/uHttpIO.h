@@ -1,9 +1,12 @@
 #include "uIO.h"
+#include <http/uHttpRequest.h>
 
 namespace unl
 {
     class uHttpIO : public uIO
     {
+    public:
+        uHttpRequest request;
     private:
         bool response_ok = 0;
     public:

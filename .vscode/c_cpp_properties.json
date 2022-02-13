@@ -11,7 +11,8 @@
                 "${workspaceFolder}/include/**",
                 "${workspaceFolder}/tripartite_src/fmt/include",
                 "${workspaceFolder}/tripartite_src/libevent/include",
-                "${workspaceFolder}/tripartite_src/compile-time-regular-expressions/include"
+                "${workspaceFolder}/tripartite_src/compile-time-regular-expressions/include",
+                "${workspaceFolder}/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
