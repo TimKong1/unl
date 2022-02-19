@@ -30,6 +30,11 @@ size_t uIO::read(void *data, size_t len)
     return bufferevent_read(bev, data, len);
 }
 
+int uIO::flush(short iotype, enum bufferevent_flush_mode state)
+{
+    return bufferevent_flush(bev, iotype, state);
+}
+
 std::string uIO::readall()
 {
     std::string s;

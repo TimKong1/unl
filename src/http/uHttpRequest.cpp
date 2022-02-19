@@ -1,5 +1,6 @@
 #include "http/uHttpRequest.h"
 #include <ctre.hpp>
+#include <regex>
 
 using namespace unl;
 
@@ -119,6 +120,12 @@ int uHttpRequest::make_request(std::string_view s)
         }
     }
     return 0;
+}
+
+bool uHttpRequest::match_path(const std::string &path)
+{
+    const std::regex pattern(path);
+    return std::regex_match(this->path, pattern);
 }
 
 uHttpRequest::uHttpRequest(){}

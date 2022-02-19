@@ -1,3 +1,4 @@
+#pragma once
 #include <map>
 #include <string_view>
 #include "uHttpDefine.h"
@@ -16,6 +17,7 @@ namespace unl
         int method;
         int make_request(std::string_view s);
         int get_fromdata(std::map<std::string_view, std::string_view> &fromdata);
+        bool match_path(const std::string &path);
     private:
         int parse_from_title(std::string_view title);
         int parse_add_headers(std::string_view headers);

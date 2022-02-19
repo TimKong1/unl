@@ -2,7 +2,11 @@
 using namespace unl;
 
 
-
+void test(uHttpIO *io)
+{
+    io->reply_file(io->request.path);
+    // io->reply_text(200, "OK", "asdasdasdads");
+}
 
 int main(int argc, char *argv[])
 {
@@ -17,6 +21,7 @@ int main(int argc, char *argv[])
     }
 #endif
     uHttpServer *server = new uHttpServer("0.0.0.0",8888);
+    server->server_map["^/.*"] = test;
     server->dispatch();
     delete server;
     return 0;

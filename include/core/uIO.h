@@ -12,6 +12,7 @@ namespace unl
         int fd;
     public:
         int write(const char * data, size_t len);
+        int flush(short iotype, enum bufferevent_flush_mode state);
         size_t read(void *data, size_t len);
         std::string readall();
         void close();
