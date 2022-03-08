@@ -4,7 +4,8 @@ using namespace unl;
 
 void test(uHttpIO *io)
 {
-    io->reply_file(io->request.path);
+    using namespace std::string_literals;
+    io->reply_file("./dist"s + io->request.path);
     // io->reply_text(200, "OK", "asdasdasdads");
 }
 

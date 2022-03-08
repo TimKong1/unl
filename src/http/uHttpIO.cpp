@@ -52,14 +52,16 @@ std::string uHttpIO::get_gmt_date()
 
 std::string_view uHttpIO::get_file_type(std::string_view path)
 {
-    static constexpr std::array<std::string_view, 10> types = {
+    static constexpr std::array<std::string_view, 12> types = {
         "txt", "html", "jpg", "gif", "png",
-        "wav", "avi", "mov", "mp3", "mp4"
+        "wav", "avi", "mov", "mp3", "mp4",
+        "js", "css"
     };
-    static constexpr std::array<std::string_view, 10> ret = {
-        "text/plain; charset=utf-8", "text/plain; charset=utf-8",
+    static constexpr std::array<std::string_view, 12> ret = {
+        "text/plain; charset=utf-8", "text/html; charset=utf-8",
         "image/jpeg", "image/gif", "image/png","audio/wav",
-        "video/x-msvideo", "video/quicktime", "audio/mpeg", "audio/mpeg"
+        "video/x-msvideo", "video/quicktime", "audio/mpeg", "audio/mpeg",
+        "application/x-javascript", "text/css"
     };
     for (size_t i = 0; i < types.size(); i++)
     {
@@ -114,7 +116,7 @@ void uHttpIO::reply_file(std::string_view file_name)
     size_t len = 0;
     do
     {
-        memset(buff, 0, sizeof(buff));
+        // memset(buff, 0, sizeof(buff));
         len = fread(buff, 1, sizeof(buff), fp);
         write(buff,len);
     } while (len);
