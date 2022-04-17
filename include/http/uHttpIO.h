@@ -30,7 +30,7 @@ namespace unl
     public:
         using uIO::uIO;
         ~uHttpIO() = default;
-        void reply_text(int status, std::string_view sstatus, std::string_view txt);
+        void reply_text(int status, std::string_view sstatus, std::string_view txt, std::string_view type = "text/html");
         void reply_file(std::string_view file_name);
     };
 }

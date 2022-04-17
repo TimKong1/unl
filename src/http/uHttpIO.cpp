@@ -52,16 +52,16 @@ std::string uHttpIO::get_gmt_date()
 
 std::string_view uHttpIO::get_file_type(std::string_view path)
 {
-    static constexpr std::array<std::string_view, 12> types = {
+    static constexpr std::array<std::string_view, 13> types = {
         "txt", "html", "jpg", "gif", "png",
         "wav", "avi", "mov", "mp3", "mp4",
-        "js", "css"
+        "js", "css", "svg"
     };
-    static constexpr std::array<std::string_view, 12> ret = {
+    static constexpr std::array<std::string_view, 13> ret = {
         "text/plain; charset=utf-8", "text/html; charset=utf-8",
         "image/jpeg", "image/gif", "image/png","audio/wav",
         "video/x-msvideo", "video/quicktime", "audio/mpeg", "audio/mpeg",
-        "application/x-javascript", "text/css"
+        "application/x-javascript", "text/css", "image/svg+xml"
     };
     for (size_t i = 0; i < types.size(); i++)
     {
@@ -89,11 +89,11 @@ void uHttpIO::write_status(int status, std::string_view sstatus)
     write(tstatus.c_str(), tstatus.length());
 }
 
-void uHttpIO::reply_text(int status, std::string_view sstatus, std::string_view txt)
+void uHttpIO::reply_text(int status, std::string_view sstatus, std::string_view txt, std::string_view type)
 {
     write_status(status, sstatus);
     headers["Date"] = get_gmt_date();
-    headers["Content-Type"] = "text/html";
+    headers["Content-Type"] = type;
     write_headers();
     write(txt.data(), txt.length());
     response_ok = true;

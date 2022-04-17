@@ -9,3 +9,6 @@
 [submodule "tripartite_src/libevent"]
 	path = tripartite_src/libevent
 	url = https://github.com/libevent/libevent.git
+[submodule "tripartite_src/json"]
+	path = tripartite_src/json
+	url = https://github.com/nlohmann/json.git

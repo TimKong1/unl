@@ -4,6 +4,8 @@ project(unl)
 add_subdirectory(tripartite_src/libevent)
 add_subdirectory(tripartite_src/fmt)
 add_subdirectory(tripartite_src/compile-time-regular-expressions)
+add_subdirectory(tripartite_src/json)
+
 #C++17
 set(CMAKE_CXX_STANDARD 17)
 ############################################################
@@ -32,7 +34,7 @@ target_include_directories(unl
         ${PROJECT_SOURCE_DIR}/include/core
 )
 #链接libevent和pthread
-target_link_libraries(unl event pthread fmt ctre)
+target_link_libraries(unl event pthread fmt ctre nlohmann_json::nlohmann_json)
 #编译 example里的http_server
 add_subdirectory(example/http)
 #编译 example里的ftp_server
